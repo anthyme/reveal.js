@@ -8,7 +8,7 @@
 
 ## Why?
 
-- Parallelism and linear performance <!-- .element: class="fragment" data-fragment-index="1" -->
+- Workflow control for parallelism and linear performance (no infrastructure) <!-- .element: class="fragment" data-fragment-index="1" -->
 
 - Aggregate consistancy <!-- .element: class="fragment" data-fragment-index="2" -->
 
@@ -33,3 +33,5 @@
 - Asynchrone CQRS with reactive architecture and new views pushed <!-- .element: class="fragment" data-fragment-index="4" -->
 
 - Durability with Akka Persistance <!-- .element: class="fragment" data-fragment-index="5" -->
+
+- Background task when the system is idle <!-- .element: class="fragment" data-fragment-index="6" -->

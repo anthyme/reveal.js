@@ -4,6 +4,13 @@
 ![cqrs](/slides/rex-akka-cqrs/img/cqrs.png)
 
 
+## Why CQRS ?
+
+- Domain complexity encapsulation in the command side
+
+- View materialization
+
+
 ## Architecture
 
 ![cqrs architecture](/slides/rex-akka-cqrs/img/cqrs-architecture.png)
@@ -29,19 +36,24 @@
 
 ## Challenges
 
-- Really big Aggregate <!-- .element: class="fragment" data-fragment-index="1" -->
+- Big Aggregate <!-- .element: class="fragment" data-fragment-index="1" -->
 
-- Sometime a lot of events by command <!-- .element: class="fragment" data-fragment-index="2" -->
+- A lot of data displayed to the user <!-- .element: class="fragment" data-fragment-index="2" -->
 
-- Bad perf on prod dataset at first <!-- .element: class="fragment" data-fragment-index="3" -->
+- Sometime a lot of created events <!-- .element: class="fragment" data-fragment-index="3" -->
 
-- Synchronous vs Asynchronous <!-- .element: class="fragment" data-fragment-index="4" -->
+- Bad perfs on prod dataset at first <!-- .element: class="fragment" data-fragment-index="4" -->
+
+- Synchronous vs Asynchronous <!-- .element: class="fragment" data-fragment-index="5" -->
+<br/> => Eventual consistancy danger !!!
 
 
 ## Solutions
 
-- Group events by type to batch them (with SqlBulkCopy) <!-- .element: class="fragment" data-fragment-index="1" -->
+- Group events by type and do batchs <!-- .element: class="fragment" data-fragment-index="1" -->
 
-- Group and map events to "batch events" by storage destination <!-- .element: class="fragment" data-fragment-index="2" -->
+- Group and map domain events by storage destination to "batch events"  <!-- .element: class="fragment" data-fragment-index="2" -->
 
 - Cache Ref and State data <!-- .element: class="fragment" data-fragment-index="3" -->
+
+- Compute and store less with <br/>"business tricks" <!-- .element: class="fragment" data-fragment-index="4" -->
