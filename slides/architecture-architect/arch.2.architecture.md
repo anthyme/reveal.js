@@ -1,4 +1,4 @@
-## Qu'est ce que le <br/> Software Design ?
+## Qu'est-ce que le <br/> Software Design ?
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-## Qu'est ce que l'architecture logiciele ?
+## Qu'est-ce que l'architecture logicielle ?
 
 ---
 
@@ -20,7 +20,7 @@
 
 ![designvsarchitecture](/slides/architecture-architect/img/designvsarchitecture.png)
 
-Note: Exemple : language / framework / infrastructure / patterns
+Note: Exemple : langage / framework / infrastructure / patterns
 
 ---
 
