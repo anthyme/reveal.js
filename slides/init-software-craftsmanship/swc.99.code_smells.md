@@ -1,22 +1,3 @@
-# Code Smells
-
-<!-- .slide: data-background-image="/slides/init-software-craftsmanship/img/smelly.jpg" data-background-size="contain" data-background-repeat="no-repeat" -->
-
-Note:
-
-Avez-vous d&eacute;j&agrave; eu un  senti contrari &agrave; la vu un code?
-
-
-## Comme une odeur... 
-
-> A code smell is a surface indication that usually corresponds to a deeper problem in the system. Martin Fowler
-
-Note:
-
-Descriptions vagues car il revient aux &eacute;quipes et d&eacute;veloppeurs de d&eacute;cider quand un code semble suffisamment odorant pour n&eacute;cessiter une revue de code.
-
-Des outils de qualimetrie permettent de fixer des seuils pour identifier le code odorant => Sonarqube
-
 
 ## Type de Code Smells
 
