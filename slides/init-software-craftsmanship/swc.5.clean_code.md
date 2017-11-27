@@ -214,6 +214,7 @@ Exposez le minimum nécessaire !
 
 Conserver les éléments liés a proximité
 
+
 # Commentaires
 
 - redondance 
