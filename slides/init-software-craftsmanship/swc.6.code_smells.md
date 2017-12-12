@@ -184,6 +184,26 @@ public void SaveUser(User user);
 ``` 
 
 
+# SOLID Principles
+
+|     |         |                                 |
+|:---:|:-------:|---------------------------------|
+| *S* | **SRP** | Single responsibility principle |
+| *O* | **OCP** | Open/closed principle           |
+| *L* | **LSP** | Liskov substitution principle   |
+| *I* | **ISP** | Interface segregation principle |
+| *D* | **DIP** | Dependency inversion principle  |
+|     |         |                                 |
+
+Note:
+
+- SRP: a class should have only a single responsibility (i.e. only one potential change in the software's specification should be able to affect the specification of the class)
+- OCP: “software entities … should be open for extension, but closed for modification.”
+- LSP: “objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.” See also design by contract.
+- ISP: “many client-specific interfaces are better than one general-purpose interface.”
+- DIP: one should “Depend upon Abstractions. Do not depend upon concretions.”
+
+
 # R&eacute;f&eacute;rences
 
 - [sourcemaking.com/refactoring/smells](https://sourcemaking.com/refactoring/smells)

@@ -17,7 +17,7 @@ Expertise vient par la pratique <br/> (10.000 heures) :
 - Appliquer les pratiques en projets
 - Coding Dojo
 - Projets personnels
-- Projets opensourc
+- Projets opensource
 
 
 ## Pyramid to Mastery

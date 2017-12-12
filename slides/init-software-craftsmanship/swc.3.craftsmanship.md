@@ -49,11 +49,11 @@ Note:
 
 Le probleme est que nous avons une mauvaise relation au temps.
 
-Le nombre de fois o&ugrave; j'ai entendu : "on a pas le temps de faire des tests".
-MAIS on a le temps de faire des semaines de test pour trouver tous les bugs avant la livraison ? 
+Le nombre de fois ou j'ai entendu : "on a pas le temps de faire des tests automatisés".
+MAIS on a le temps de faire des semaines de tests manuels pour trouver tous les bugs avant la livraison ? 
 ET on a le temps de debugger pendant des heures pour trouver un commit oublier ?
 
-Le probl&agrave;me est que nous n'avons 
+Le problème est que nous n'avons 
 - pas de trace précise du temps de correction des bugs.
 - pas de métriques comparatives d'un bug al'autre.
 - Les développeurs sont des perfectionnistes suceptibles : minimise le temps de résolution, et résolve sur temps perso ou cacher 
@@ -61,10 +61,28 @@ Le probl&agrave;me est que nous n'avons
 => Essayez de tracer le nb de bugs pour constater une tendance! 
 
 
+![modeldevqualitystep1](/slides/init-software-craftsmanship/img/craftsmanship/modeldevqualitystep1-300x73.png) <!-- .element style="width: 40%; border: 0; background: None; box-shadow: None;" -->
+
+
+![modeldevqualitystep2](/slides/init-software-craftsmanship/img/craftsmanship/modeldevqualitystep2-300x155.png) <!-- .element style="width: 40%; border: 0; background: None; box-shadow: None;" -->
+
+
+![modeldevqualitystep3](/slides/init-software-craftsmanship/img/craftsmanship/modeldevqualitystep3-300x155.png) <!-- .element style="width: 40%; border: 0; background: None; box-shadow: None;" -->
+
+
+![modeldevqualitystep4](/slides/init-software-craftsmanship/img/craftsmanship/modeldevqualitystep4-300x206.png) <!-- .element style="width: 50%; border: 0; background: None; box-shadow: None;" -->
+
+
+![modeldevqualitystep5](/slides/init-software-craftsmanship/img/craftsmanship/modeldevqualitystep5-300x206.png) <!-- .element style="width: 50%; border: 0; background: None; box-shadow: None;" -->
+
+
+![modeldevqualitystep6](/slides/init-software-craftsmanship/img/craftsmanship/modeldevqualitystep6-300x207.png) <!-- .element style="width: 50%; border: 0; background: None; box-shadow: None;" -->
+
+
 ## Le principe agile oublié
 
 > Continuous attention to technical excellence and good design
-**enhances** <!-- .element: class="fragment highlight-red" data-fragment-index="1" -->
+**enhances** <!-- .element: class="fragment highlight-red" -->
 agility.  
 
 Note:
@@ -77,7 +95,7 @@ Continuellement l'excellence technique et le bon design sont nécessaire
 ## Une proposition alternative... 
 
 > Continuous attention to technical excellence and good design
-**saves** <!-- .element: class="fragment highlight-green" data-fragment-index="2" -->
+**saves** <!-- .element: class="fragment highlight-green" -->
 agility.  
 
 Note:
@@ -116,32 +134,31 @@ Note:
 1. Confierez-vous votre opération a coeur ouvert a un programme ?
 
 Note: Nous faut il des lois et des controles pour commencer à faire du code de qualité ?
+1. Est-ce que le développeur est un ingénieur au même titre qu'un autre ? Ou un simple exécutant ?
+1. Le role de développeur porte encore une connotation péjorative. => Geek introverti incapable de travailler en équipe
+1. Faut-il légiférer et normer les taches du développeur ? 
+1. Faut-il des certifications de qualité pour les développeurs ?
 
 
 ## Nos Valeurs ?
 
 ![Lost](/slides/init-software-craftsmanship/img/Land-Of-Confusion.jpg)
 
-Note: 
 
-1. Est-ce que le développeur est un ingénieur au m&ecirc;me titre qu'un autre ? Ou un simple exécutant ?
-1. Le r&ocirc;le de développeur porte encore une connotation péjorative. => Geek introverti incapable de travailler en équipe
-1. Faut-il légiférer et normer les taches du développeur ? 
-1. Faut-il des certifications de qualité pour les développeurs ?
-
-
-## Take back control 
+<!-- ## Take back control  -->
 
 ![Uncle Bob Needs You](/slides/init-software-craftsmanship/img/uncle-bob.jpg)
 
-**Become a Craftsman!**
+> the only way to go fast <br/> is to go well! <br/> Robert C. Martin "Uncle Bob"
+
+<!-- **Become a Craftsman!** -->
 
 Note:
 
 Les devs doivent prendre le controle de leur destinée ! (uncle bob)
 
 T&ecirc;te de ligne du mouvement software craftsmanship, uncle bob faisait parti des signataire du manifeste agile.
-
+ 
 1. Une catastrophe informatique nous pend au nez. Et ce jour l&agrave;, les politiques et les juges viendront légiférer sur comment on doit développer.
 1. Seule alternative: les développeurs doivent se prendre en main et améliorer leurs pratiques pour plus de qualité.
 1. Craftsman = Artisan. Un professionnel passionné par son travail, cherchant sans cesse aperfectionner son art.
