@@ -1,15 +1,15 @@
 
 # Différents types d'architectes
 
---- 
+---
 
-## Architecte d'Entreprise (urbaniste)
-- Personnes
-- Processus
-- Flux de données
-- Objectifs stratégiques d'entreprise
-- Roadmaps entreprise
-- Pas que du logiciel
+## Architecte applicatif
+- Opérationnel
+- Concentré sur une application / techno
+- Maintenabilité
+- Détail
+- Bibliotheques
+- Langages
 
 ---
 
@@ -22,15 +22,15 @@
 - Framework
 - Roadmap solution
 
----
+--- 
 
-## Architecte applicatif
-- Opérationnel
-- Concentré sur une application / techno
-- Maintenabilité
-- Détail
-- Bibliotheques
-- Langages
+## Architecte d'Entreprise (urbaniste)
+- Personnes
+- Processus
+- Flux de données
+- Objectifs stratégiques d'entreprise
+- Roadmaps entreprise
+- Pas que du logiciel
 
 ===
 
@@ -39,23 +39,6 @@
 ---
 
 ![skills](/slides/architecture-architect/img/skills.png)
-
----
-
-### Techniques
-
-- Développement
-- Design
-- Veille techno
-
----
-
-### Management
-
-- Gestion de projet
-- Résolution de problemes
-- Négociation
-- Facilitation
 
 ---
 
@@ -69,6 +52,23 @@
 - Savoir déléguer
 - Positif
 - Créatif
+
+---
+
+### Management
+
+- Gestion de projet
+- Résolution de problemes
+- Négociation
+- Facilitation
+
+---
+
+### Techniques
+
+- Développement
+- Design
+- Veille techno
 
 ---
 

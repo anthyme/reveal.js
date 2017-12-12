@@ -20,6 +20,8 @@
 - Sécurité
 - Performance
 
+Note: c'est bien gentil les PO qui vont injecter de la story mais une solution logiciele est un produit technico fonctionnel avec différents 
+
 ---
 
 ## Garder le cap
