@@ -1,4 +1,4 @@
-### Clean Code
+### Clean & Simple Code #
 
 ![Clean](/slides/init-software-craftsmanship/img/CleanCode.jpg)
 
@@ -9,16 +9,6 @@ Note:
 1. Parmis les créateurs du manifeste Agile
 1. SmallTalk & Java
 1. Kent Beck <-> Simple Design : essentiel des pratiques dev XP 
-
-
-### Stupid code !
-
-- Singleton
-- Tight coupling
-- Untestable
-- Premature optimization
-- Indescriptive naming 
-- Duplication
 
 
 ## Du code propre ?
@@ -41,22 +31,23 @@ Ensemble de regles:
 
 - Développeur: 80% lecture / 20% écriture 
 - La documentation est souvent incomplete, périmée, voir inexistente
-- Le code EST la documentation et seule source de vérité
-- Etre agile, c'est pouvoir changer
+- Code est partagé par les équipes
+- Etre agile, c'est embrasser le changement
 
 Note: 
-
-- Je ne parle même pas du support et des testeurs 
+- Je ne parle même pas du support et des testeurs
+- le code est la documentation
 
 
 ## Ratio Signal/Bruit 
 
-- Cerveau humain peut traiter nombre limité de signaux 
+- Le cerveau humain peut traiter nombre limité de signaux 
 - Trop d'informations se transforment en bruit
 - Le bruit du code s'amplifie au fil du temps
 
 Note:
 
+Construction mental du code
 1. Homme conserve seulement 7 éléments (+-2) dans sa mémoire a un moment donné
 1. Un code avec une complexité cyclomatique trop importante renvoit trop de possibilités
 1. Une fois sur cette voie on ne peut que rajouter dela complexité (un if / case de plus) 
@@ -71,7 +62,10 @@ Note:
 1. Extrait du chapitre écrit par Michael Feathers dans le livre Clean Code
 
 
-> There are only two hard things in Computer Science: cache invalidation and <br/> naming things. <br/> Phil Karlton
+## Nommage
+
+> Names and attributes must be accommodated to the essence of things, and not the essence to the names, since things come first and names afterwards.
+ Galileo Galilei, Discoveries and Opinions of Galileo 
 
 
 ### Quel nom ?
@@ -108,30 +102,6 @@ Note:
 - **Il n'est jamais trop tard pour renommer son enfant!**
 
 
-## Appel a un ami !
-
-Dans le doute, demandez a un collegue 
-
-
-# Classes
-
-> Classes should do one thing. They should do it well. They should do it only.
- <br/>Robert C. Martin
-
-
-## Ajouter une Classe ?
-
-* Nouveau concept
-* Cohésion faible
-* Réutilisation
-* Réduire la complexité
-
-Note:
-**réduire complexité**: 
-- diminuer le nombre d'éléments (cohésion) 
-- encapsuler des variables dans une structure cohérente
-
-
 ## Nommer une classe
 
 1. Un nom
@@ -140,6 +110,7 @@ Note:
 4. Pas de suffixes superflus
 
 Note:
+
 Pb de nommage => smell de responsabilité peu claire ou de mauvaise utilisation?
 
 
@@ -160,17 +131,140 @@ Note:
 Les suffixe trop génériques ou superflus constituent du bruit.
 
 
-# Functions
-
-> Functions should do one thing. They should do it well. They should do it only. <br/>Robert C. Martin
-
-
 ## Nommer une méthode
 
 - Le nom doit suffire !
-- Pas de nom générique (Do, Process, Execute, ...) 
+- Pas de nom générique (Do, Process, Execute) 
 
 => ex: DocumentConverter.HtmlFromText(textFile);
+
+
+## Appel a un ami !
+
+Dans le doute, demandez a un collegue 
+
+
+# Conditions
+
+> Je n'ai fait celle-ci plus longue que parce que je n'ai pas eu le loisir de la faire plus courte. Blaise Pascal
+
+Note:
+- Expressivité
+- Concision
+
+
+## Conditions non-non-positives 
+
+```javascript
+function doSomething(entity) {
+
+    if (!entity.isNotSelected && client!=null) {
+        ...
+    }
+
+    if (!entity instanceof Person) {
+        ...
+    }
+    else {
+        ...
+    }   
+}
+```
+
+Note:
+
+* Préférez les formulations positives
+* Imprécision des ensembles flous (tous sauf a)
+
+
+## Magic Strings & Numbers
+
+```Java
+public void Initialize(Person person, int level, Date date) 
+{
+    if (level != 6)
+        person.Title = "Employee";
+    else
+        person.Title = "Chief Dictator"; 
+
+    if (person.Title == "Employee") {
+        ...
+    }
+}
+```
+
+Note:
+
+* Fragilité au changement
+* Aucune protection a la compilation
+
+
+## Réduire la complexité 
+
+```python
+if date.before(SUMMER_START) and date.after(SUMMER_END):
+    charge = quantity * winterRate + winterServiceCharge
+    if WINTER_SALE_START < date < WINTER_SALES_END:
+        charge = charge * 0.7    
+else:
+    charge = quantity * summerRate
+```
+
+Note:
+
+* Favoriser une méthode
+* Extraire méthode
+
+
+## Comportement vs Enumération
+
+```csharp
+public void CalculateFinalPrice()
+{
+    switch (item.Country)
+    {
+        case "France": item.Price = item.BasePrice*FrenchTaxes; 
+                    break;
+        case "USA": item.Price = item.BasePrice*USATaxes; 
+                    break;
+                    ...
+        default : item.Price = item.BasePrice;
+    }
+}
+```
+
+Note:
+
+* Polymorphisme pour injecter du comportement 
+* plutôt que l'énumération de tous les comportements a un endroit
+
+
+## Dictionaires
+
+Déplacer une liste de conditions dans une structure de données
+
+```csharp
+
+Dictionary<string,float> Taxes;
+
+public void CalculateFinalPrice()
+{
+     item.Price = item.BasePrice*Taxes[item.Country]; 
+}
+```
+
+
+## Concision
+
+Profiter des avantages des
+* Ternaires (x ? y : z)  
+* Lambdas : Linq / Lambdaj / jLinq / Pynq
+
+
+# Functions
+
+> Functions should do one thing. They should do it well. They should do it only.
+ <br/>Robert C. Martin
 
 
 ## Pourquoi créer une fonction?
@@ -178,9 +272,10 @@ Les suffixe trop génériques ou superflus constituent du bruit.
 * Eviter la duplication
 * Réduire l'indentation du code
 * Clarifier l'intention d'un code 
-* Séparer différentes opérations et abstractions
+* Séparer différentes opérations
 
 Note:
+
 * dup: Mutualiser pour réutiliser & éviter les disparités
 * ind: Réduire la complexité cyclomatique
 * int: Introduire des concepts de plus haut niveau, réduire le nombre d'éléments locaux.
@@ -195,13 +290,55 @@ Uncle Bob, dit qu'une fonction ne devrait :
 - pas avoir plus de **3 parametres**. 
 
 
+# Exceptions
+
+3 types d'exceptions:
+* Fatale
+* Gérable
+* Négligeable
+
+Note:
+- fat: ressources obligatoires dysfonctionnant. Incapacité de l'app a se rattraper gracieusement.
+- ger: une ou plusieurs solutions existent : rejeu, operation alternative
+- neg: pas d'incidence sur l'application. (code inélégant dans une api de plus bas niveau)
+
+
+## Je ne veux rien trouver sous le tapis!
+
+![Mamie](/slides/init-software-craftsmanship/img/Fotolia_75067118_M.jpg) <!-- .element style="width: 60%;" -->
+
+Note:
+* Bubble exceptions to competent level
+* Don't handle exception if you can't revert to stable state
+* Last resort, handle at topmost level and shutdown app or abort web call 
+
+
+# Classes
+
+> Classes should do one thing. They should do it well. They should do it only.
+ <br/>Robert C. Martin
+
+
+## New Class ?
+
+* Nouveau concept
+* Cohésion faible
+* Réutilisation
+* Réduire la complexité
+
+Note:
+**réduire complexité**: 
+- diminuer le nombre d'éléments (cohésion) 
+- encapsuler des variables dans une structure cohérente
+
+
 ## Cohésion & Couplage 
 
-- Cohésion *forte*
+* Cohésion *forte*
     - Regroupement fonctionnel
     - Meme niveau de détail
 
-- Couplage *faible*
+* Couplage *faible*
     - Minimiser dépendances 
 
 
@@ -210,9 +347,26 @@ Uncle Bob, dit qu'une fonction ne devrait :
 Exposez le minimum nécessaire !
 
 
+## Primitive Obsession
+
+```cs
+// N'utilisez pas les primitives ...
+public void SaveUser(int id, string nom, string prénom, 
+    string adresse, string téléphone);
+
+// Quand un objet peut aisément les représenter !
+public void SaveUser(User user);
+``` 
+
+
 ## Principe de proximité
 
 Conserver les éléments liés a proximité
+
+
+## Table des matieres
+
+Le code collapsed se lit comme un résumé
 
 
 # Commentaires
@@ -226,10 +380,10 @@ Conserver les éléments liés a proximité
 
 ## To comment or not to comment
 
-* Résumé ?
-* Code désactivé ?
-* Clarification ?
-* Avertissement ?
+* Résumé
+* Code désactivé
+* Avertissement
+* Clarification
 
 Note: 
 * Résumé
@@ -238,10 +392,10 @@ Note:
     - Vision erronée/périmée
 * Code désactivé
     - Zombie code => Delete
-* Clarification
-    - Signe de code trop long ?
 * Avertissement : Todo/Warning
     - Dette technique
+* Clarification
+    - Signe de code trop long ?
 
 
 ## Questions a se poser
@@ -253,10 +407,11 @@ Note:
 
 # Simple Design
 
-> Make it work, <br/>make it right, <br/>make it fast.<br/>Kent Beck
+> Make it work, make it right, make it fast.
+― Kent Beck
 
 
-## 4 regles
+## 4 rules of Simple Design
 
 * Valide les tests
 * Exprime clairement son intention 
@@ -264,42 +419,74 @@ Note:
 * Minimise le nombre d'éléments
 
 Note:
+
 - Ordre d'importance descendant
 **ATTENTION**: Minimiser tant qu'on n'enfreint pas la seconde regle ! 
 
 
-### Principe de surprise minimum
+## Principe de surprise minimum
 
-Fais ce que tu dis, <br/>et dis (clairement) ce que tu fais!
+Fais ce que tu dis, et dis (clairement) ce que tu fais!
 
-```csharp
-void GetItem();
-//vs
+Void GetItem();
 Item GetItem(int id);
-```
 
 Note:
-Une méthode GetItem() on s'attend qu'elle requete un dataprovider pour récupérer l'élément et éventuellement le remettre en forme et le renvoie en sortie
 
-=> notions de Standard et  Cohérence au sein de l'application
-de
+Une méthode GetItem() on s'attend qu'elle requ&ecirc;te un dataprovider pour récupérer l'élément et éventuellement le remettre en formeet le renvoie en sortie
+
+=> notions de Standard et de Cohérence au sein de l'application
+
 Faites votre code comme une API, pensez a l'usage d'un autre développeur ne connaissant pas la tuyauterie interne.
 Le TDD peut aider!
 
 
+# SOLID Principles
+
+|     |         |                                 |
+|:---:|:-------:|---------------------------------|
+| *S* | **SRP** | Single responsibility principle |
+| *O* | **OCP** | Open/closed principle           |
+| *L* | **LSP** | Liskov substitution principle   |
+| *I* | **ISP** | Interface segregation principle |
+| *D* | **DIP** | Dependency inversion principle  |
+|     |         |                                 |
+
+Note:
+
+- SRP: a class should have only a single responsibility (i.e. only one potential change in the software's specification should be able to affect the specification of the class)
+- OCP: “software entities … should be open for extension, but closed for modification.”
+- LSP: “objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.” See also design by contract.
+- ISP: “many client-specific interfaces are better than one general-purpose interface.”
+- DIP: one should “Depend upon Abstractions. Do not depend upon concretions.”
+
+
+## SRP : Single Responsability Principle
+
+- Une classe ne devrait avoir qu'une seule responsabilité et donc une seule raison de changer 
+
+Note:
+
+
+## OCP : Open-Closed Principle
+
+> software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification. Bertrand Meyer
+
+
 # Conclusion
 
-> Simplicity is a great virtue but it requires hard work to achieve it and education to appreciate it. And to make matters worse: complexity sells better. <br/>Edsger W. Dijkstra
+> Simplicity is a great virtue but it requires hard work to achieve it and education to appreciate it. And to make matters worse: complexity sells better.
+― Edsger W. Dijkstra
 
 
-### La vérité est dans le code
+## La vérité est dans le code
 
 * Le code est majoritairement lu
 * Le code est la seule documentation a jour
 * Le bruit est l'origine de mauvaises implémentations & bugs
 
 
-### Un investissement durable 
+## Un investissement durable 
 
 Ces principes fonctionnent quelque soit
 * le langage (objet)
@@ -307,7 +494,20 @@ Ces principes fonctionnent quelque soit
 * les librairies
 
 
+## Des pratiques partagées !
+
+* Documenter des standards
+* Pair Programming / Mob Programming 
+* Code Reviews 
+* Outils de suivi de la qualité du code
+
+Note:
+
+Suivre les bonnes pratiques seul ne sert à rien. 
+Pire c'est dangereux pour la santé mentale !
+
+
 ## Références 
 
-- Clean Code, Robert C Martin (@unclebob)
+- Clean Code, Robert C Martin @unclebob
 - Extreme Programming Explained, Kent Beck
