@@ -5,7 +5,7 @@
 
 \#développeur \#architecte \#craftsman 
 
-\#parcticemanager #dotnet
+\#practicemanager #dotnet
 
 Note: sujet pas toujours très clair créant parfois de la défiance pour le role et leur représentants ou une espece de glorification et objectif de carriere pour d'autre
 
